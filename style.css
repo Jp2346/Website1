@@ -45,3 +45,91 @@ footer {
   padding: 1rem;
   margin-top: 20px;
 }
+
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.para1 {
+  background-color: #fff8dc;
+  padding: 1rem;
+  border-left: 5px solid #ffa500;
+  margin-bottom: 1rem;
+}
+
+.para2 {
+  color: green;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.para3 {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#candy-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* So clicks pass through */
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.candy {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Button Base Style */
+.button, #candyBtn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(101, 71, 255, 0.6);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Hover State */
+.button:hover, #candyBtn:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(101, 71, 255, 0.8);
+}
+
+/* Active (Pressed) State */
+.button:active, #candyBtn:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(101, 71, 255, 0.5);
+}

@@ -4,24 +4,55 @@
   <meta charset="UTF-8">
   <title>Josh The Sigma</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <header>
-    <h1>Welcome to My Website!</h1>
+    <h1>Hi,Hola,Welcome!</h1>
     <nav>
       <a href="index.html" class="button">Home</a>
       <a href="about.html" class="button">About</a>
-      <a href="projects.html" class="button">Projects</a>
+      <a href="projects.html" class="button">View Projects</a>
+      <p
     </nav>
   </header>
 
   <main>
     <img src="https://raw.githubusercontent.com/Jp2346/Website1/main/IMG_1414.jpeg" alt="A drawing of a cat.">
     <p>This is my site! I'm Josh, a middle schooler who makes cool stuff and is broke XD.</p>
+    <button id="candyBtn">Skittles!🍬</button>
+
+<div id="candy-container"></div>
   </main>
 
   <footer>
-    <p>© 2025 Josh</p>
+    <p>© 2025 Josh P.</p>
   </footer>
+  <script>
+const candyBtn = document.getElementById('candyBtn');
+const container = document.getElementById('candy-container');
+
+candyBtn.addEventListener('click', () => {
+  for (let i = 0; i < 10; i++) {
+    const candy = document.createElement('div');
+    candy.classList.add('candy');
+    candy.style.left = Math.random() * window.innerWidth + 'px';
+    candy.style.animationDuration = (3 + Math.random() * 2) + 's';
+    candy.style.backgroundColor = getRandomCandyColor();
+
+    container.appendChild(candy);
+
+    candy.addEventListener('animationend', () => {
+      candy.remove();
+    });
+  }
+});
+
+function getRandomCandyColor() {
+  const colors = ['#ff69b4', '#ff4500', '#ffd700', '#7fff00', '#1e90ff'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+</script>
 </body>
 </html>
